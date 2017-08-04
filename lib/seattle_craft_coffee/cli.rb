@@ -20,7 +20,7 @@ class SeattleCraftCoffee::Brewers
     puts "sorry that wasn't a valid choice"
   end
 
-  def sign_off
+  def self.sign_off
     puts "Enjoy your craft coffee!  "
   end
 
