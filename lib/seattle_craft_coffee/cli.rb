@@ -3,8 +3,6 @@ class SeattleCraftCoffee::Brewers
   def call
     greeting
     menu
-    invalid_choice
-    sign_off
     goodbye
   end
 
