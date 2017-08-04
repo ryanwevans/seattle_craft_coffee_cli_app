@@ -16,5 +16,6 @@ class SeattleCraftCoffee::Brewers
 
   def goodbye
     puts "Enjoy your craft coffee!  Goodbye..."
+  end
 
 end
