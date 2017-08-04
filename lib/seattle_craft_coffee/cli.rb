@@ -34,6 +34,7 @@ class SeattleCraftCoffee::Brewers
 
   def sign_off
     puts "Enjoy your craft coffee!  "
+  end
 
   def goodbye
     puts "Goodbye..."
