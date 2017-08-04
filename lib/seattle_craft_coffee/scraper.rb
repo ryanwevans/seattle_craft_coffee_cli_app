@@ -1,0 +1,5 @@
+class SeattleCraftCoffee::Scraper
+
+  
+
+end
