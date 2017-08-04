@@ -16,7 +16,7 @@ class SeattleCraftCoffee::Brewers
     SeattleCraftCoffee::ScrapeBrewers.scrape_brewer_description(input)
   end
 
-  def invalid_choice
+  def self.invalid_choice
     puts "sorry that wasn't a valid choice"
   end
 
