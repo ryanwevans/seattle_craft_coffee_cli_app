@@ -3,6 +3,8 @@ class SeattleCraftCoffee::Brewers
   def call
     greeting
     menu
+    invalid_choice
+    sign_off
     goodbye
   end
 
@@ -21,13 +23,20 @@ class SeattleCraftCoffee::Brewers
     when 3
       puts "you chose brewer number 3"
     else
-      puts "sorry that wasn't a valid choice"
+      invalid_choice
     end
 
   end
 
+  def invalid_choice
+    puts "sorry that wasn't a valid choice"
+  end
+
+  def sign_off
+    puts "Enjoy your craft coffee!  "
+
   def goodbye
-    puts "Enjoy your craft coffee!  Goodbye..."
+    puts "Goodbye..."
   end
 
 end
