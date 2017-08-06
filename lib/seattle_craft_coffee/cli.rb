@@ -11,6 +11,7 @@ class SeattleCraftCoffee::Brewers
   end
 
   def menu
+    SeattleCraftCoffee::ScrapeBrewers.scrape_list_of_brewers
     puts "Which Craft Coffee brewer are you interested in? Enter the number:"
     input = gets.to_i
     SeattleCraftCoffee::ScrapeBrewers.scrape_brewer_description(input)

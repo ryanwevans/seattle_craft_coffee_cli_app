@@ -9,14 +9,16 @@ class SeattleCraftCoffee::ScrapeBrewers
     case input
     when 1
       puts "This will be a description of brewer 1"
+      SeattleCraftCoffee::Brewers.sign_off
     when 2
       puts "This will be a description of brewer 2"
+      SeattleCraftCoffee::Brewers.sign_off
     when 3
       puts "This will be a description of brewer 3"
+      SeattleCraftCoffee::Brewers.sign_off
     else
       SeattleCraftCoffee::Brewers.invalid_choice
     end
-    SeattleCraftCoffee::Brewers.sign_off
 
   end
 
