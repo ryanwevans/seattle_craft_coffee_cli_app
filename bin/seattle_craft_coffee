@@ -2,4 +2,4 @@
 
 require_relative '../lib/seattle_craft_coffee'
 
-SeattleCraftCoffee::Brewers.new.call
+SeattleCraftCoffee::Cli.new.call

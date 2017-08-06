@@ -1,4 +1,4 @@
-class SeattleCraftCoffee::Brewers
+class SeattleCraftCoffee::Cli
 
   def call
     greeting
@@ -8,18 +8,17 @@ class SeattleCraftCoffee::Brewers
   end
 
   def greeting
-    puts "Welcome to Seattle's Top Craft Coffee"
+    puts "Welcome to Seattle's Top Craft Coffee.  Here are the top craft coffee brewers in Seattle:"
   end
 
   def list
-    SeattleCraftCoffee::ScrapeBrewers.scrape_list_of_brewers
+    SeattleCraftCoffee::Scraper.scrape_list_of_brewers
   end
 
   def menu
-    list
     puts "Which Craft Coffee brewer are you interested in? Enter the number:"
     input = gets.to_i
-    SeattleCraftCoffee::ScrapeBrewers.scrape_brewer_description(input)
+    SeattleCraftCoffee::Scraper.scrape_brewer_description(input)
   end
 
   def self.invalid_choice
