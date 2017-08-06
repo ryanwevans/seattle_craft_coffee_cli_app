@@ -22,7 +22,9 @@ class SeattleCraftCoffee::Scraper
   end
 
   def self.add_brewers
-
+    scrape_list_of_brewers.each do |brewer|
+      SeattleCraftCoffee::Brewers.new
+    end
   end
 
 end
