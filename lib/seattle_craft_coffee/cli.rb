@@ -2,6 +2,7 @@ class SeattleCraftCoffee::Brewers
 
   def call
     greeting
+    list
     menu
     goodbye
   end
@@ -10,8 +11,12 @@ class SeattleCraftCoffee::Brewers
     puts "Welcome to Seattle's Top Craft Coffee"
   end
 
-  def menu
+  def list
     SeattleCraftCoffee::ScrapeBrewers.scrape_list_of_brewers
+  end
+
+  def menu
+    list
     puts "Which Craft Coffee brewer are you interested in? Enter the number:"
     input = gets.to_i
     SeattleCraftCoffee::ScrapeBrewers.scrape_brewer_description(input)
