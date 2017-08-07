@@ -24,16 +24,26 @@ class SeattleCraftCoffee::Cli
   end
 
   def menu
-    puts "Which Craft Coffee brewer's description would you like to read? Enter the number:"
+    puts ""
+    puts "Which Craft Coffee brewer's description would you like to read? Enter the number or 'exit':"
     input = gets.to_i
-    puts "-- #{SeattleCraftCoffee::Brewers.all[input-1].description} --"
+    if input < 11 && input > 0
+      puts "*** #{SeattleCraftCoffee::Brewers.all[input-1].name} *** "
+      puts "-- #{SeattleCraftCoffee::Brewers.all[input-1].description} --"
+      sign_off
+    elsif input == 0
+      goodbye
+    else
+      invalid_choice
+    end
   end
 
-  def self.invalid_choice
+  def invalid_choice
     puts "Sorry that wasn't a valid choice"
+    menu
   end
 
-  def self.sign_off
+  def sign_off
     puts "Enjoy your craft coffee!  "
   end
 
