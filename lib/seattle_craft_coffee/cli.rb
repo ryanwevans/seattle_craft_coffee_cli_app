@@ -22,7 +22,7 @@ class SeattleCraftCoffee::Cli
   end
 
   def self.invalid_choice
-    puts "sorry that wasn't a valid choice"
+    puts "Sorry that wasn't a valid choice"
   end
 
   def self.sign_off
