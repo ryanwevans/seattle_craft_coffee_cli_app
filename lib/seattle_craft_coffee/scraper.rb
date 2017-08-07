@@ -6,4 +6,5 @@ class SeattleCraftCoffee::Scraper
     doc.css("section.save-venue.saveable-venue.has-spacing.is-standard")
   end
 
+
 end
