@@ -20,18 +20,6 @@ class SeattleCraftCoffee::Brewers
     end
   end
 
-  def self.brewer_name(input)
-    all[input-1].name
-  end
-
-  def self.brewer_neighborhood(input)
-    all[input-1].neighborhood
-  end
-
-  def self.brewer_description(input)
-    all[input-1].description
-  end
-
   def self.all
     @@all
   end

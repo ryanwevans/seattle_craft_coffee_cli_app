@@ -30,9 +30,23 @@ class SeattleCraftCoffee::Cli
     if input < 11 && input > 0
       puts "*** #{SeattleCraftCoffee::Brewers.all[input-1].name} *** "
       puts "-- #{SeattleCraftCoffee::Brewers.all[input-1].description} --"
-      sign_off
+      puts ""
+      puts "Would you like to read about another Seattle Craft Coffee brewer?"
+      input = gets.strip.downcase
+      if input == "yes"
+        menu
+      else
+        sign_off
+      end
     elsif input == 0
-      goodbye
+      puts ""
+      puts "Are you sure you would like to exit? Yes/No:"
+      input = gets.strip.downcase
+      if input == "no"
+        menu
+      else
+        sign_off
+      end
     else
       invalid_choice
     end
