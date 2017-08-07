@@ -12,13 +12,13 @@ class SeattleCraftCoffee::Cli
   end
 
   def list
-    SeattleCraftCoffee::Scraper.scrape_list_of_brewers
+    SeattleCraftCoffee::Brewers.all
   end
 
   def menu
     puts "Which Craft Coffee brewer are you interested in? Enter the number:"
     input = gets.to_i
-    SeattleCraftCoffee::Scraper.scrape_brewer_description(input)
+    SeattleCraftCoffee::Brewers.all[input-1]
   end
 
   def self.invalid_choice

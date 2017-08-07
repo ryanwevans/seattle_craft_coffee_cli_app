@@ -11,8 +11,15 @@ class SeattleCraftCoffee::Brewers
 
   def add_brewers
     SeattleCraftCoffee::Scraper.scrape_list_of_brewers.each do |brewer|
-      
+      self.new(
+      #brewer scraping code,
+      #description scraping code
+      )
     end
+  end
+
+  def self.all
+    @@all
   end
 
 end
