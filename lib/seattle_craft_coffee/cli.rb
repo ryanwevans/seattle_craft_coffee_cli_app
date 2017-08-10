@@ -45,7 +45,7 @@ class SeattleCraftCoffee::Cli
       puts ""
       puts "Are you sure you would like to exit? Yes/No:"
       input = gets.strip.downcase
-      if input == "no"
+      if input == "no" || input == "n"
         menu
       else
         sign_off
@@ -68,6 +68,7 @@ class SeattleCraftCoffee::Cli
   def goodbye
     puts ""
     puts "Goodbye..."
+    puts ""
   end
 
 end
