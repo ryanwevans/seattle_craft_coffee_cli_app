@@ -18,8 +18,9 @@ class SeattleCraftCoffee::Cli
 
   def list
     SeattleCraftCoffee::Brewers.all.each.with_index(1) do |brewer, index|
+      puts ""
       puts "#{index}.  #{brewer.name}"
-      puts "  Located in #{brewer.neighborhood}"
+      puts "    --Located in #{brewer.neighborhood}"
     end
   end
 
@@ -28,12 +29,14 @@ class SeattleCraftCoffee::Cli
     puts "Which Craft Coffee brewer's description would you like to read? Enter the number or 'exit':"
     input = gets.to_i
     if input < 11 && input > 0
+      puts ""
       puts "*** #{SeattleCraftCoffee::Brewers.all[input-1].name} *** "
-      puts "-- #{SeattleCraftCoffee::Brewers.all[input-1].description} --"
+      puts ""
+      puts "   #{SeattleCraftCoffee::Brewers.all[input-1].description} --"
       puts ""
       puts "Would you like to read about another Seattle Craft Coffee brewer?"
       input = gets.strip.downcase
-      if input == "yes"
+      if input == "yes" || input == "y"
         menu
       else
         sign_off
@@ -58,10 +61,12 @@ class SeattleCraftCoffee::Cli
   end
 
   def sign_off
+    puts ""
     puts "Enjoy your craft coffee!  "
   end
 
   def goodbye
+    puts ""
     puts "Goodbye..."
   end
 
