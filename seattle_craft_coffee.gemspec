@@ -6,8 +6,8 @@ require 'seattle_craft_coffee/version'
 Gem::Specification.new do |spec|
   spec.name          = "seattle_craft_coffee"
   spec.version       = SeattleCraftCoffee::VERSION
-  spec.authors       = ["ryanwevans"]
-  spec.email         = ["<ryanwevans@icloud.com>"]
+  spec.authors       = ["Ryan Evans"]
+  spec.email         = ["ryanwevans@icloud.com"]
 
   spec.summary       = %q{Seattle's top craft coffee brewers}
   spec.homepage      = "https://github.com/ryanwevans/seattle_craft_coffee_cli_app.git"
@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
-  spec.executables << 'seattle_craft_coffee'
-  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  # spec.executables << 'seattle_craft_coffee'
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.12"
