@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "seattle_craft_coffee"
+# require "bundler/setup"
+# require "seattle_craft_coffee"
+
+require_relative '../lib/seattle_craft_coffee'
 
 SeattleCraftCoffee::Cli.new.call
