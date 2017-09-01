@@ -13,7 +13,7 @@ class SeattleCraftCoffee::Cli
   end
 
   def run_scraper
-    SeattleCraftCoffee::Brewers.add_brewers
+    SeattleCraftCoffee::Scraper.scrape_brewers
   end
 
   def list
@@ -27,12 +27,13 @@ class SeattleCraftCoffee::Cli
   def menu
     puts ""
     puts "Which Craft Coffee brewer's description would you like to read? Enter the number or 'exit':"
-    input = gets.to_i
-    if input < 11 && input > 0
+    input = gets.strip
+    if input.to_i.between?(1, 10)
+      brewer = SeattleCraftCoffee::Brewers.all[input.to_i-1]
       puts ""
-      puts "*** #{SeattleCraftCoffee::Brewers.all[input-1].name} *** "
+      puts "*** #{brewer.name} *** "
       puts ""
-      puts "   #{SeattleCraftCoffee::Brewers.all[input-1].description} --"
+      puts "   #{brewer.description} --"
       puts ""
       puts "Would you like to read about another Seattle Craft Coffee brewer?"
       input = gets.strip.downcase
@@ -41,7 +42,7 @@ class SeattleCraftCoffee::Cli
       else
         sign_off
       end
-    elsif input == 0
+    elsif input == "exit"
       puts ""
       puts "Are you sure you would like to exit? Yes/No:"
       input = gets.strip.downcase

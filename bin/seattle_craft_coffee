@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+#require '/Users/ryanevans/dev/seattle_craft_coffee/lib/seattle_craft_coffee'
 require_relative '../lib/seattle_craft_coffee'
 
 SeattleCraftCoffee::Cli.new.call
