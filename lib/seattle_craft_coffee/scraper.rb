@@ -10,8 +10,8 @@ class SeattleCraftCoffee::Scraper
     scrape_page.each do |brewer|
       SeattleCraftCoffee::Brewers.new(
       brewer.css("a.save-venue__link").text,
-      brewer.css("h2.save-venue__neighborhood.font--h4").text,
-      brewer.css("p.save-venue__description.font--body").text
+      brewer.css("h2.save-venue__neighborhood.font--h5").text,
+      brewer.css("p.save-venue__description font--body").text
       )
     end
   end
